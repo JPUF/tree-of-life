@@ -1,12 +1,15 @@
-const request = require('request')
+const axios = require('axios')
 
 module.exports = {
     call : function(url){
         return new Promise((resolve, reject) => {
-            request(url, { json: true }, (err, res, body) => {
-              if (err) reject(err)
-              resolve(body)
-            });
+            axios.get(url)
+            .then(res => {
+                resolve(res)
+            })
+            .catch(error => {
+                reject(error)
+            })
         })
     }
 }

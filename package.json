@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/JPUF/tree-of-life#readme",
   "dependencies": {
+    "axios": "^0.21.1",
     "concurrently": "^6.2.0",
     "request": "^2.88.2"
   }
