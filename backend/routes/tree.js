@@ -2,8 +2,11 @@ var express = require('express');
 var api = require('../utilities/api');
 var router = express.Router();
 
-router.get('/getTest', function(req, res, next) {
-    api.post('tree_of_life/node_info', {"ott_id":671802})
+router.get('/mrta/:firstId/:secondId', function(req, res, next) {
+    let firstId = req.params.firstId
+    let secondId = req.params.secondId
+    console.log(firstId + ' <====> '+ secondId)
+    api.post('/mrca', {"ott_ids":[firstId,secondId]})
     .then(response => {
         res.json(response.data)
     })

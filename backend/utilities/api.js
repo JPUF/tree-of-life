@@ -1,6 +1,6 @@
 const axios = require('axios')
 
-const baseUrl  = 'https://api.opentreeoflife.org/v3/'
+const baseUrl  = 'https://api.opentreeoflife.org/v3/tree_of_life'
 const config = {
     headers: {
         'Content-Type' : 'content-type:application/json'
