@@ -1,19 +1,10 @@
 var express = require('express');
-var api_helper = require('../utilities/API_Helper');
-const axios = require('axios')
+var api = require('../utilities/api');
 var router = express.Router();
 
-const baseUrl  = 'https://api.opentreeoflife.org/v3/'
-const config = {
-    headers: {
-        'Content-Type' : 'content-type:application/json'
-    }
-}
-
 router.get('/getTest', function(req, res, next) {
-    axios.post(baseUrl + 'tree_of_life/node_info', {"ott_id":81461}, config)
+    api.post('tree_of_life/node_info', {"ott_id":671802})
     .then(response => {
-        console.log(response.data)
         res.json(response.data)
     })
     .catch(error => {
